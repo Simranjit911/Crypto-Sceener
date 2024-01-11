@@ -43,13 +43,18 @@
 //   }
 //   return ReactDOM.createPortal(
 //     <div
-//     className="fixed z-20 top-0 overflow-scroll  h-full bg-gray-200 bg-opacity-30 backdrop-blur-sm  flex items-center justify-center font-nunito "
+//     className="fixed top-0 overflow-scroll left-0 right-0 z-20 md:w-full w-full  h-full bg-gray-200 bg-opacity-30 backdrop-blur-sm flex  items-center justify-center "
 //       onClick={close}>
 //       <div onClick={(e) => e.stopPropagation()}
-//         className="xl:w-[65%] lg:w-[75%] md:w-[90%] sm:w-[75%] w-[90%] lg:h-[75%] md:h-[70%] h-[90vh]  scrollbar-thin md:overflow-hidden scrollbar-thumb-gray-100 scrollbar-track-gray-200 overflow-x-hidden  bg-gray-300 bg-opacity-75 rounded-lg text-white relative">
+//         className="md:w-[65%] md:h-[75%]  px-4 h-full  bg-gray-300 bg-opacity-75 rounded-lg shadow-sm text-white relative">
 //         {coinData ? (
-//           <div className="flex flex-col md:flex-row  items-center justify-between lg:h-full h-auto w-full p-4 relative">
-//             <div className="flex w-full flex-col md:w-[45%] h-fit pr-2 ">
+//           <div className="flex flex-col md:flex-row items-center justify-between w-full h-full p-4">
+//             <div className="flex flex-col w-[95%] md:w-[45%] h-full pr-2 ">
+//             <button
+//                 className=" hover:scale-125 duration-200 self-end md:hidden"
+//                  onClick={close}>
+//                &#10006;
+//                </button>
 //               <div className="flex w-full items-center">
 //                 <img
 //                   className="w-[3rem] h-[3rem] mx-1.5"

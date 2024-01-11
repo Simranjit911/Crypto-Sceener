@@ -158,6 +158,13 @@ function TableComp() {
             Simranjit Singh
           </a>
         </span>
+        <span className="">
+          Data Provided by
+          <a href="https://www.coingecko.com" rel="noreferrer" target="_blank" className="mx-1 text-cyan">
+            {" "}
+            CoinGecko
+          </a>
+        </span>
       </div>
     </>
   );
