@@ -153,7 +153,7 @@ function TableComp() {
      
         <span className="">
           Developed by 
-          <a href="https://www.coingecko.com" rel="noreferrer" target="_blank" className="text-cyan">
+          <a href="https://simranjit-singh.vercel.app/" rel="noreferrer" target="_blank" className="text-cyan">
             {" "}
             Simranjit Singh
           </a>

@@ -14,6 +14,9 @@ function SearchInput({ handleSearch }) {
     let q = e.target.value;
     setSrchVal(q);
     handleSearch(srchval);
+    if(q==""){
+      setSearchData()
+    }
 
   }
   //select coin from list of coins
@@ -37,7 +40,7 @@ function SearchInput({ handleSearch }) {
           onChange={handleSub}
           value={srchval}
           className="w-full rounded bg-gray-200 placeholder:text-gray-100  required pl-2 border border-transparent focus:border-cyan outline-0"
-          type="search"
+          type="text"
           placeholder="Enter Coin Name"
         />
         <button
@@ -48,15 +51,14 @@ function SearchInput({ handleSearch }) {
         </button>
       </form>
       {srchval.length > 0 ? (
-        <ol className="absolute  h-96 top-11 w-full   backdrop-blur-sm rounded-xl shadow-2xl overflow-x-hidden py-2 bg-gray-200 bg-opacity-20  scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-gray-200 decoration-0 ">
+        <ol className="absolute z-10 h-96 top-11 w-full   backdrop-blur-md rounded-xl shadow-2xl overflow-x-hidden py-2 bg-gray-200 bg-opacity-20  scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-gray-200 decoration-0 ">
           {searchData ? (
             searchData.map((coin) => {
               return (
                 <li
-                  className="flex items-center ml-4 my-2 cursor-pointer"
+                  className="flex items-center ml-4 my-2 cursor-pointer border border-gray-100 rounded-md shadow-xl mx-1 py-1 px-2"
                   key={coin.id}
-                  onClick={() => selectCoin(coin.id)}
-                >
+                  onClick={() => selectCoin(coin.id)}>
                   <img
                     className="w-[1.5rem] h-[1.5rem] mr-2"
                     src={coin.thumb}

@@ -11,7 +11,7 @@ const TrendingCoin = ({ data }) => {
 
   return (
     <div
-      className="w-[90%] h-fit md:w-[40%] bg-gray-200 mb-12
+      className="w-[90%] h-fit md:w-[40%] bg-gray-200 mb-8
     last:mb-0 rounded-lg p-4 relative cursor-pointer
     hover:bg-gray-100 hover:bg-opacity-40
     "
@@ -28,7 +28,7 @@ const TrendingCoin = ({ data }) => {
             <img
               src={data.small}
               alt={data.name}
-              className="w-[1.5rem] h-[1.5rem] mx-1.5 rounded-full"
+              className="w-[2rem] h-[2rem] mx-1.5 rounded-full"
             />
           </h3>
 
@@ -56,13 +56,7 @@ const TrendingCoin = ({ data }) => {
             <span className="text-cyan">{data.score}</span>
           </h3>
 
-          <img
-            src={data.large}
-            alt={data.name}
-            className="w-[35%] h-auto rounded-full absolute top-2/4 -right-12
--translate-y-2/4
-"
-          />
+        
         </>
       ) : (
     <Loader span={"Loading"}/>
