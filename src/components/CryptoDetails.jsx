@@ -43,16 +43,16 @@ function CryptoDetails() {
   }
   return ReactDOM.createPortal(
     <div
-      className="fixed top-0 w-full h-full bg-gray-200 bg-opacity-30 backdrop-blur-sm flex items-center justify-center"
+      className="fixed -top-20 md:w-full w-[80%] h-full bg-gray-200 bg-opacity-30 backdrop-blur-sm flex  items-center justify-center"
       onClick={close}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-[65%] h-[75%] bg-gray-300 bg-opacity-75 rounded-lg shadow-sm text-white relative"
+        className="md:w-[65%] h-[75%]  bg-gray-300 bg-opacity-75 rounded-lg shadow-sm text-white relative"
       >
         {coinData ? (
-          <div className="flex items-center justify-between w-full h-full p-4">
-            <div className="flex flex-col w-[45%] h-full pr-2 ">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full h-full p-4">
+            <div className="flex flex-col md:w-[45%] h-full pr-2 ">
               <div className="flex w-full items-center">
                 <img
                   className="w-[3rem] h-[3rem] mx-1.5"
@@ -291,7 +291,7 @@ function CryptoDetails() {
                 </div>
               </div>
             </div>
-            <div className=" flex flex-col w-[55%] h-full pl-3 ">
+            <div className=" flex flex-col md:w-[55%] h-full pl-3 ">
               <button
                 className=" hover:scale-125 duration-200 self-end"
                 onClick={close}>

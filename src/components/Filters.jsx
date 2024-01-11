@@ -25,13 +25,13 @@ function Filters() {
   }
 
   return (
-    <div className="w-full flex-col md:flex-row h-12 border-2 flex justify-evenly items-center border-gray-200 relative rounded-lg">
+    <div className="w-full flex-col gap-2 md:flex-row md:h-12 pt-2 pb-1 md:p-1 border-2 flex justify-between items-center border-gray-200 relative rounded-lg ">
       <Search />
       {/* Currency Form */}
-      <div className="mr-7  ">
+      <div className="  ">
         <form
           onSubmit={handleCurrencySub}
-          className="relative  justify-center mx-auto flex items-center font-nunito mr-12"
+          className="relative  justify-center mx-auto flex items-center font-nunito "
         >
           <label htmlFor="currency" className="relative   font-bold mr-2">
             Currency:

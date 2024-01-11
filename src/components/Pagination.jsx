@@ -14,7 +14,7 @@ function PerPage() {
     <>
       <form
         onSubmit={handlePerPage}
-        className="relative  justify-center mx-auto flex items-center font-nunito mr-12"
+        className="relative  justify-center mx-auto flex items-center font-nunito md:mr-12"
       >
         <label htmlFor="perpage" className="relative   font-semibold mr-1">
           Per Page:
@@ -65,7 +65,7 @@ function Pagination() {
   }
   if (cryptoData && cryptoData.length >= perPage) {
     return (
-      <div className="flex items-center">
+      <div className="flex items-center flex-col  md:flex-row">
         <PerPage />
         <ul className="flex items-center justify-center text-sm">
           <li className="flex  items-center">

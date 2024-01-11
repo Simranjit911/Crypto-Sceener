@@ -39,7 +39,7 @@ function TableComp() {
   return (
     <>
       {" "}
-      <div className="flex flex-col mt-9 border border-gray-100 rounded">
+      <div className="flex flex-col mt-4 md:mt-6 border border-gray-100 rounded">
         {cryptoData ? (
           <table className="w-full table-auto h-full">
             <thead className="text-base capitalize min-h-28 text-gray-100 border-b border-gray-100 font-medium ">
@@ -48,7 +48,7 @@ function TableComp() {
                 <th className="py-1">Name</th>
                 <th className="py-1">Price</th>
                 <th className="py-1 hidden lg:table-cell">Total Volume</th>
-                <th className="py-1">Market Cap Change</th>
+                <th className="py-1 hidden lg:table-cell">Market Cap Change</th>
                 <th className="py-1 hidden lg:table-cell">1H</th>
                 <th className="py-1 hidden lg:table-cell">24H</th>
                 <th className="py-1 hidden lg:table-cell">7D</th>
@@ -70,15 +70,13 @@ function TableComp() {
                 return (
                   <tr
                     key={id}
-                    className="text-center text-base border-b border-gray-300 hover:bg-gray-200 cursor-pointer"
-                  >
-                    <td className="py-4 flex items-center  uppercase">
+                    className="text-center text-base border-b border-gray-300 hover:bg-gray-200 cursor-pointer">
+                    <td className="py-4 flex items-center justify-center  uppercase">
                       <SavedBtn data={data}/>
                       <img
                         className="w-[1.5rem] h-[1.5rem]"
                         src={image}
-                        alt={name}
-                      />
+                        alt={name}/>
                       <span className="">
                         {" "}
                         <Link to={`/${data.id}`} className="cursor-pointer">
@@ -101,8 +99,8 @@ function TableComp() {
                     <td
                       className={
                         Number(market_cap_change_percentage_24h) > 0
-                          ? "text-green py-4"
-                          : "text-red py-4"
+                          ? "text-green py-4 hidden lg:table-cell"
+                          : "text-red py-4 hidden lg:table-cell"
                       }
                     >
                       {market_cap_change_percentage_24h}%
@@ -150,13 +148,14 @@ function TableComp() {
           </table>
         ) : <Loader span={"Searching..."}/>}
       </div>
-      <div className="flex items-center justify-between mt-4 capitalize h-[2rem]">
+      <div className="flex items-center gap-4 flex-col md:flex-row justify-center md:justify-between mt-4  capitalize md:h-[2rem]">
         <Pagination />
-        <span>
-          Data is Provided by
-          <a href="https://www.coingecko.com" rel="noreferrer" target="_blank">
+     
+        <span className="">
+          Developed by 
+          <a href="https://www.coingecko.com" rel="noreferrer" target="_blank" className="text-cyan">
             {" "}
-            CoinGecko
+            Simranjit Singh
           </a>
         </span>
       </div>
