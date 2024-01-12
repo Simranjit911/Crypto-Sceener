@@ -65,9 +65,9 @@ function Pagination() {
   }
   if (cryptoData && cryptoData.length >= perPage) {
     return (
-      <div className="flex items-center flex-col  md:flex-row">
+      <div className="flex gap-3 md:gap-1 items-center flex-col  md:flex-row">
         <PerPage />
-        <ul className="flex items-center justify-center text-sm">
+        <ul className="flex items-center justify-center  text-sm">
           <li className="flex  items-center">
             <button onClick={prev} className="outline-0 hover:text-cyan w-8">
               <img

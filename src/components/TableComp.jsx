@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CryptoContext } from "../context/CryptoContext";
 import Pagination from "./Pagination";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { StorageContext } from "../context/StorageContext";
 import Loader from "./Loader";
 function SavedBtn({data}) {
@@ -35,6 +35,7 @@ saveCoin(data.id)
   );
 }
 function TableComp() {
+  let nav=useNavigate()
   let { cryptoData, currency } = useContext(CryptoContext);
   return (
     <>
@@ -68,8 +69,12 @@ function TableComp() {
                   current_price,
                 } = data;
                 return (
+                
                   <tr
                     key={id}
+                    onClick={()=>{
+                      nav(`/${data.id}`)
+                    }}
                     className="text-center text-base border-b border-gray-300 hover:bg-gray-200 cursor-pointer">
                     <td className="py-4 flex items-center justify-center  uppercase">
                       <SavedBtn data={data}/>
@@ -142,13 +147,20 @@ function TableComp() {
                       %
                     </td>
                   </tr>
+                
                 );
               })}
             </tbody>
           </table>
-        ) : <Loader span={"Searching..."}/>}
+        ) :
+        <div className="min-h-[50vh] flex items-center justify-center">
+
+          <Loader span={"Searching..."}/>
+        </div>
+        
+        }
       </div>
-      <div className="flex items-center gap-4 flex-col md:flex-row justify-center md:justify-between mt-4  capitalize md:h-[2rem]">
+      <div className="flex items-center gap-2 flex-col md:flex-row justify-center md:justify-between mt-4  capitalize md:h-[2rem]">
         <Pagination />
      
         <span className="">
