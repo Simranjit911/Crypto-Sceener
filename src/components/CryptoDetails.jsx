@@ -356,7 +356,7 @@ function CryptoDetails() {
   let nav = useNavigate();
   let { coinData, getCoinDetails, currency,setcoinData } = useContext(CryptoContext);
   useLayoutEffect(() => {
-    // getCoinDetails(coinId);
+     getCoinDetails(coinId);
   }, [coinId]);
   function close() {
     nav("..");
