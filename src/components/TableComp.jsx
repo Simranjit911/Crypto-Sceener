@@ -72,9 +72,7 @@ function TableComp() {
                 
                   <tr
                     key={id}
-                    onClick={()=>{
-                      nav(`/${data.id}`)
-                    }}
+                   
                     className="text-center text-base border-b border-gray-300 hover:bg-gray-200 cursor-pointer">
                     <td className="py-4 flex items-center justify-center  uppercase">
                       <SavedBtn data={data}/>
@@ -95,12 +93,20 @@ function TableComp() {
                       </Link>
                     </td>
                     <td className="py-4">
+                    <Link to={`/${data.id}`} className="cursor-pointer">
+
                       {new Intl.NumberFormat("en-IN", {
                         style: "currency",
                         currency: currency,
                       }).format(Number(current_price))}
+                      </Link>
                     </td>
-                    <td className="py-4 hidden lg:table-cell">{total_volume}</td>
+                    <td className="py-4 hidden lg:table-cell">
+                    <Link to={`/${data.id}`} className="cursor-pointer">
+
+                      {total_volume}
+                    </Link>
+                      </td>
                     <td
                       className={
                         Number(market_cap_change_percentage_24h) > 0
@@ -108,7 +114,10 @@ function TableComp() {
                           : "text-red py-4 hidden lg:table-cell"
                       }
                     >
+                       <Link to={`/${data.id}`} className="cursor-pointer">
+
                       {market_cap_change_percentage_24h}%
+                       </Link>
                     </td>
                     <td
                       className={
@@ -117,9 +126,12 @@ function TableComp() {
                           : "text-red py-4 hidden lg:table-cell"
                       }
                     >
+                       <Link to={`/${data.id}`} className="cursor-pointer">
+
                       {Number(price_change_percentage_1h_in_currency).toFixed(
                         2
-                      )}
+                        )}
+                        </Link>
                       %
                     </td>
                     <td
@@ -129,10 +141,13 @@ function TableComp() {
                           : "text-red py-4 hidden lg:table-cell"
                       }
                     >
+                       <Link to={`/${data.id}`} className="cursor-pointer">
+
                       {Number(price_change_percentage_24h_in_currency).toFixed(
                         2
-                      )}
+                        )}
                       %
+                        </Link>
                     </td>
                     <td
                       className={
@@ -141,10 +156,13 @@ function TableComp() {
                           : "text-red py-4 hidden lg:table-cell"
                       }
                     >
+                       <Link to={`/${data.id}`} className="cursor-pointer">
+
                       {Number(price_change_percentage_7d_in_currency).toFixed(
                         2
-                      )}
+                        )}
                       %
+                        </Link>
                     </td>
                   </tr>
                 
